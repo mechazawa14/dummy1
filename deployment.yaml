@@ -1,0 +1,22 @@
+apiVersion : apps/v1
+kind : Deployment
+
+metadata :
+  name : calci-deploy
+
+spec :
+  replicas: 1
+  selector :
+    matchLabels: 
+      app: calci 
+  
+  template:
+    metadata:
+     labels:
+       app: calci 
+
+    spec: 
+      containers :
+      - name: calci 
+        image: calci-latest 
+        imagePullPolicy: Never
